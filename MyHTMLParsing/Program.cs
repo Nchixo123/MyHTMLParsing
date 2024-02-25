@@ -49,7 +49,6 @@ namespace MyHTMLParsing
 
             foreach (var component in components)
             {
-               
                 var products = WebUtility.HtmlDecode(component.SelectSingleNode(".//h4/a").InnerText.Trim());
                 var priceNode = component.SelectSingleNode(".//span[@class='price-display formatted']");
                 var priceText = priceNode.SelectSingleNode(".//span[@style='display: none']").InnerText.TrimStart('$');
@@ -78,7 +77,7 @@ namespace MyHTMLParsing
         public class Components
         {
             public string Product { get; set; } = string.Empty;
-            public decimal Price { get; set; }  
+            public decimal Price { get; set; }
             public decimal Rating { get; set; }
         }
     }
